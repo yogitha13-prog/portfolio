@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Bayya Yogitha — Computer Science and Engineering student and aspiring software developer.">
 <title>Bayya Yogitha | Developer Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0b1220;--panel:#111c2e;--panel2:#15243a;--line:#263750;--text:#edf4ff;--muted:#a4b4ca;--teal:#65e0c2;--blue:#8cbcff;--shadow:0 20px 60px rgba(0,0,0,.22)}
 *{box-sizing:border-box}
@@ -98,9 +95,92 @@ textarea{min-height:120px;resize:vertical}
 @media(max-width:850px){.wrap{grid-template-columns:1fr;padding:16px 12px 85px}.sidebar{position:static}.side-links{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.side-link{display:flex;flex-direction:column;gap:5px;padding:9px 4px;font-size:11px}.side-link .num{width:25px;height:25px}.side-intro,.side-bottom{display:none}.content{min-height:0}.topbar{padding:16px 20px}.page{padding:28px 22px 34px}}
 @media(max-width:560px){.cards,.skills,.contact-grid,.form-row{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:span 2}.page{padding:25px 18px 30px}.topbar{padding:14px 18px}.status{font-size:10px}.hero-actions .btn{flex:1}.footer{padding:16px 20px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* ===== Light theme override ===== */
+:root{--bg:#f6f1ea;--panel:#ffffff;--panel2:#faf6f0;--line:#e7dccd;--text:#1e1b3a;--muted:#5f5b7a;--teal:#5b3df5;--blue:#ff7a59;--shadow:0 18px 50px rgba(60,40,20,.10)}
+body{background:radial-gradient(circle at 90% 0%,rgba(255,122,89,.16),transparent 30%),radial-gradient(circle at 0% 100%,rgba(91,61,245,.10),transparent 32%),var(--bg);color:var(--text)}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif}
+h2{letter-spacing:-.5px}
+.content{background:#fff}
+.sidebar{background:linear-gradient(170deg,#241f52,#161233);border-color:#2f2a63;color:#fff}
+.sidebar h1{color:#fff}
+.sidebar .role{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.22);color:#ffd2c6}
+.sidebar .side-intro,.sidebar .contact-mini a{color:#cfcbee}
+.sidebar .contact-mini a:hover{color:#ffb4a1}
+.sidebar .side-link{color:#cfcbee}
+.sidebar .side-link .num{background:rgba(255,255,255,.10);color:#ffd2c6}
+.sidebar .side-link:hover,.sidebar .side-link.active{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.22);color:#fff}
+.sidebar .side-link.active .num{background:#ff7a59;color:#fff}
+.sidebar .side-bottom{border-color:rgba(255,255,255,.16)}
+.monogram{background:linear-gradient(145deg,#ff7a59,#ffb199);color:#2a1410;box-shadow:0 10px 30px rgba(255,122,89,.35)}
+.topbar{background:#faf6f0}
+.status{color:#5b3df5}.status:before{background:#5b3df5;box-shadow:0 0 0 4px rgba(91,61,245,.15)}
+.lead{color:#46425f}
+.hero-tag{background:#efeaff;border-color:#d9d0ff;color:#5b3df5}
+.btn.primary{background:#5b3df5;color:#fff;border-color:#5b3df5}
+.btn.secondary{background:#fff;color:#1e1b3a}
+.stat{background:linear-gradient(145deg,#faf6f0,#fff)}
+.card{background:linear-gradient(145deg,#ffffff,#faf6f0);box-shadow:0 6px 20px rgba(60,40,20,.05)}
+.card-icon,.contact-box .symbol{background:#efeaff;color:#5b3df5}
+.contact-box{background:#faf6f0}
+.timeline{border-left-color:#d9cfbf}
+.timeline-item:before{box-shadow:0 0 0 5px rgba(91,61,245,.15)}
+.tag{color:#3a3566;background:#f1ecff;border-color:#ddd4ff}
+.note{background:#f4f0ff;color:#3a3566}
+label{color:#3a3566}
+input,textarea{background:#fff;border-color:#d8ccbb;color:#1e1b3a}
+.footer{color:#7a7690}
+.project-links a,.when,.eyebrow,.project-type,h2 .accent,.skill-group h3,.stat strong{color:#5b3df5}
+.project-links a:hover{color:#ff7a59}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline-color:#5b3df5}
+
+/* ===== Times New Roman everywhere ===== */
+*,*:before,*:after,body,h1,h2,h3,h4,button,input,textarea,.btn,.monogram,.stat strong{font-family:"Times New Roman",Times,serif !important}
+body{font-size:17px}
+.lead{font-size:19px}
+.side-intro,.card p,.detail,.contact-mini a,.contact-box strong,label,.note,.footer{font-size:15px !important}
+.tag,.btn,.project-links a,.side-link,.status,.crumb,.contact-box small{font-size:14px !important}
+.eyebrow,.project-type,.when,.role,.hero-tag{font-size:13px !important}
+input,textarea{font-size:16px}
+
+/* ===== Animations ===== */
+body::before,body::after{content:"";position:fixed;border-radius:50%;filter:blur(90px);z-index:0;pointer-events:none}
+body::before{width:46vmax;height:46vmax;left:-14vmax;top:-12vmax;background:rgba(255,122,89,.24);animation:drift1 16s ease-in-out infinite alternate}
+body::after{width:42vmax;height:42vmax;right:-12vmax;bottom:-14vmax;background:rgba(91,61,245,.18);animation:drift2 19s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(18vmax,12vmax) scale(1.15)}}
+@keyframes drift2{to{transform:translate(-16vmax,-10vmax) scale(1.2)}}
+.wrap{position:relative;z-index:1;perspective:1600px}
+#progress{position:fixed;top:0;left:0;height:4px;width:25%;z-index:50;background:linear-gradient(90deg,#5b3df5,#ff7a59);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.page.active.dir-next{animation:turnNext .7s cubic-bezier(.2,.8,.2,1)}
+.page.active.dir-prev{animation:turnPrev .7s cubic-bezier(.2,.8,.2,1)}
+@keyframes turnNext{from{opacity:0;transform:translateX(70px) rotateY(-14deg);transform-origin:left center}to{opacity:1;transform:none}}
+@keyframes turnPrev{from{opacity:0;transform:translateX(-70px) rotateY(14deg);transform-origin:right center}to{opacity:1;transform:none}}
+.page.active .hero>*,.page.active .stat,.page.active .card,.page.active .timeline-item,.page.active .contact-box,.page.active .section-title,.page.active form,.page.active .skill-group{animation:rise .7s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0)*90ms + 200ms)}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.monogram{animation:floaty 4s ease-in-out infinite}
+@keyframes floaty{50%{transform:translateY(-7px) rotate(-3deg)}}
+h2 .accent{background:linear-gradient(90deg,#5b3df5,#ff7a59,#5b3df5);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.card{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(91,61,245,.16)}
+.stat{transition:transform .3s}.stat:hover{transform:translateY(-4px)}
+.tag{transition:transform .2s,background .2s}.tag:hover{transform:scale(1.07);background:#e4dcff}
+.hint{font-size:13px !important;color:#7a7690;letter-spacing:.04em}
+@media(max-width:560px){.hint{display:none}}
+
+/* ===== Bottom page bar ===== */
+#pagebar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border:1px solid #e7dccd;border-radius:999px;padding:9px 16px;box-shadow:0 14px 40px rgba(60,40,20,.18);width:min(640px,calc(100% - 24px))}
+#pagebar button{border:0;background:transparent;color:#1e1b3a;font-weight:700;font-size:14px !important;cursor:pointer;padding:6px 8px;border-radius:999px;white-space:nowrap}
+#pagebar button:hover{background:#efeaff;color:#5b3df5}
+#pagebar button.off{opacity:.35;pointer-events:none}
+#pagebar .count{font-size:14px;font-weight:700;color:#5b3df5;min-width:58px;text-align:center}
+#pagebar input[type=range]{flex:1;min-width:0;width:auto;padding:0;border:0;background:transparent;accent-color:#5b3df5;cursor:pointer}
+.wrap{padding-bottom:110px !important}
+@media(max-width:560px){#pagebar{gap:6px;padding:7px 10px}#pagebar .count{min-width:46px}}
 </style>
 </head>
 <body>
+<div id="progress" aria-hidden="true"></div>
 <div class="wrap">
   <aside class="sidebar">
     <div class="identity">
@@ -125,7 +205,7 @@ textarea{min-height:120px;resize:vertical}
 
   <main class="content">
     <div class="topbar">
-      <span class="crumb" id="crumb">01 / About</span>
+      <span class="crumb" id="crumb">01 / About</span><span class="hint">Use ← → arrow keys or swipe to turn pages</span>
       <span class="status">Building, learning, improving</span>
     </div>
 
@@ -275,14 +355,38 @@ textarea{min-height:120px;resize:vertical}
     <footer class="footer"><span>© <span id="year"></span> Bayya Yogitha</span><span>Designed with curiosity & care.</span></footer>
   </main>
 </div>
+<nav id="pagebar" aria-label="Page navigation">
+  <button type="button" id="prevBtn">← Previous</button>
+  <input type="range" id="pageSlider" min="1" max="4" step="1" value="1" aria-label="Go to page">
+  <span class="count" id="pageCount">01 / 04</span>
+  <button type="button" id="nextBtn">Next →</button>
+</nav>
 <script>
 const pages = [...document.querySelectorAll('.page')];
 const navLinks = [...document.querySelectorAll('.side-link')];
 const crumb = document.getElementById('crumb');
 const labels = {about:'About',resume:'Resume',portfolio:'Portfolio',contact:'Contact'};
+const order=Object.keys(labels);
+let current=0;
+const progress=document.getElementById('progress');
+function stagger(page){
+  page.querySelectorAll('.hero>*,.stat,.card,.timeline-item,.contact-box,.section-title,form,.skill-group').forEach((n,i)=>n.style.setProperty('--i',i));
+}
 function showPage(id, updateHash=true){
   if(!labels[id]) id='about';
-  pages.forEach(page=>page.classList.toggle('active',page.id===id));
+  const idx=order.indexOf(id);
+  const dir=idx>=current?'dir-next':'dir-prev';
+  current=idx;
+  progress.style.width=((idx+1)/order.length*100)+'%';
+  document.getElementById('pageSlider').value=idx+1;
+  document.getElementById('pageCount').textContent=String(idx+1).padStart(2,'0')+' / '+String(order.length).padStart(2,'0');
+  document.getElementById('prevBtn').classList.toggle('off',idx===0);
+  document.getElementById('nextBtn').classList.toggle('off',idx===order.length-1);
+  pages.forEach(page=>{
+    page.classList.remove('dir-next','dir-prev');
+    page.classList.toggle('active',page.id===id);
+    if(page.id===id){stagger(page);void page.offsetWidth;page.classList.add(dir);}
+  });
   navLinks.forEach(link=>{
     const active=link.dataset.page===id;
     link.classList.toggle('active',active);
@@ -297,6 +401,26 @@ document.querySelectorAll('[data-go]').forEach(link=>link.addEventListener('clic
 window.addEventListener('hashchange',()=>showPage(location.hash.slice(1),false));
 window.addEventListener('popstate',()=>showPage(location.hash.slice(1),false));
 if(location.hash) showPage(location.hash.slice(1),false);
+
+document.getElementById('prevBtn').addEventListener('click',()=>turn(-1));
+document.getElementById('nextBtn').addEventListener('click',()=>turn(1));
+document.getElementById('pageSlider').addEventListener('input',e=>showPage(order[e.target.value-1]));
+function turn(step){
+  const next=order[current+step];
+  if(next) showPage(next);
+}
+document.addEventListener('keydown',e=>{
+  if(['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+  if(e.key==='ArrowRight') turn(1);
+  if(e.key==='ArrowLeft') turn(-1);
+});
+let touchX=0,touchY=0;
+document.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].clientX;touchY=e.changedTouches[0].clientY},{passive:true});
+document.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-touchX,dy=e.changedTouches[0].clientY-touchY;
+  if(Math.abs(dx)>70&&Math.abs(dy)<50) turn(dx<0?1:-1);
+},{passive:true});
+if(!location.hash) showPage('about',false);
 document.getElementById('year').textContent=new Date().getFullYear();
 document.getElementById('mailform').addEventListener('submit',e=>{
   e.preventDefault();
